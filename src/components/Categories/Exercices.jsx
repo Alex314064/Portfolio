@@ -6,9 +6,9 @@ const Exercices = () => (
     {dataExercices.map((exercice) => (
       <div className="card text-center" key={exercice.id}>
         <div>
-          <div className="card-header">{exercice.name}</div>
+          <div className="card-header">{exercice.id}</div>
           <div className="card-body ">
-            <h1 className="card-title">Exercice numéro: {exercice.id}</h1>
+            <h1 className="card-title">{exercice.name}</h1>
             <p className="card-text">
               Nom de l'exercice : {exercice.description}
             </p>
