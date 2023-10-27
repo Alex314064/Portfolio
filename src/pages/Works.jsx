@@ -1,7 +1,6 @@
 import React from "react";
-import Exercices from "../components/Categories/Exercices";
+import Projects from "../../public/Logos/project.svg";
 import Technologies from "../components/Categories/Technologies";
-import project from "../assets/Logos/project.svg";
 import { Link } from "react-router-dom";
 
 const Works = () => (
@@ -13,10 +12,10 @@ const Works = () => (
       </div>
       <div className="project-menu">
         <div>
-          <img className="Logos" src={project}></img>
+          <img className="Logos" src={Projects}></img>
           <h2>
             <Link
-              to="/exercices"
+              to="Exercices"
               className="btn btn-primary"
               aria-current="page"
             >
@@ -25,11 +24,11 @@ const Works = () => (
           </h2>
         </div>
         <div>
-          <img className="Logos" src={project}></img>
+          <img className="Logos" src={Projects}></img>
           <h2>
             {" "}
             <Link
-              to="/casestudy"
+              to="Technologies"
               className="btn btn-primary"
               aria-current="page"
             >
@@ -38,13 +37,15 @@ const Works = () => (
           </h2>
         </div>
         <div>
-          <img className="Logos" src={project}></img>
-          <h2>Les projets réalisés</h2>
+          <img className="Logos" src={Projects}></img>
+          <h2>
+            <Link to="Projects" className="btn btn-primary" aria-current="page">
+              Voir les projets
+            </Link>
+          </h2>
         </div>
       </div>
     </div>
-    <Exercices />
-    <Technologies />
   </>
 );
 export default Works;

@@ -1,24 +1,22 @@
 import App from "../../App";
-import dataCaseStudy from "../../data/dataCaseStudy";
+import dataLangages from "../../data/dataLangages";
+import Ruby from "./../../../public/Logos/Ruby.jpg";
 
-const CaseStudy = () => (
-  <div className="Cards">
-    {dataCaseStudy.map((dataCaseStudy) => (
-      <div className="card text-center" key={dataCaseStudy.id}>
-        <div>
-          <div className="card-header">{dataCaseStudy.name}</div>
-          <div className="card-body ">
-            <h1 className="card-title"> Cas numéro: {dataCaseStudy.id}</h1>
-            <p className="card-text">
-              Nom de l'exercice : {dataCaseStudy.description}
-            </p>
-          </div>
+const Technologies = () => (
+  <div className="langage-menu">
+    {dataLangages.map((langage) => (
+      <div className="card" style={{ width: "18rem" }} key={langage.id}>
+        <img className="card-img-top" src={langage.logo} alt="Card image cap" />
+        <div className="card-body">
+          <h1>{langage.name}</h1>
+          <p className="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
         </div>
-        <a href="#" className="btn btn-primary">
-          Aller voir le cas
-        </a>
       </div>
     ))}
   </div>
 );
-export default CaseStudy;
+
+export default Technologies;

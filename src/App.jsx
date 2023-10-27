@@ -11,23 +11,27 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Exercices from "./components/Categories/Exercices";
 import Technologies from "./components/Categories/Technologies";
+import Projects from "./components/Categories/Projects";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/works">
-            <Route index element={<Works />} />
-            <Route path="exercices" element={<Exercices />} />
-            <Route path="technologies" element={<Technologies />} />
-          </Route>
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
+      <main>
+        <div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/Works">
+              <Route index element={<Works />} />
+              <Route path="Exercices" element={<Exercices />} />
+              <Route path="Technologies" element={<Technologies />} />
+              <Route path="Projects" element={<Projects />} />
+            </Route>
+          </Routes>
+        </div>
+      </main>
     </BrowserRouter>
   );
 }

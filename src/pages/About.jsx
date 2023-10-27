@@ -1,4 +1,8 @@
 import App from "../App";
 
-const About = () => <h1> About page</h1>;
+const About = () => (
+  <div>
+    <h1> A propos de moi </h1>
+  </div>
+);
 export default About;

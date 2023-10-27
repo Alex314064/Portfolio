@@ -2,9 +2,6 @@ import React from "react";
 import dataExercices from "../../data/dataExercices";
 
 const Exercices = () => (
-
-);
-return (
   <div className="Cards">
     {dataExercices.map((exercice) => (
       <div className="card text-center" key={exercice.id}>
@@ -23,6 +20,6 @@ return (
       </div>
     ))}
   </div>
-)
+);
 
 export default Exercices;

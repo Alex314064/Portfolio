@@ -5,12 +5,12 @@
     gap: 20px;
 }
 .Logos{
-    width: 400px;
+    width: 350px;
     border-radius:  10px;
     border: solid rgb(220, 27, 198) 4px;
+    margin-bottom: 5px;
 }
 .categorie-projet{
-    padding-top: 150px;
     display: flex;
     justify-content: center;
     flex-direction:column;
@@ -28,7 +28,29 @@
 .project-menu > div {
   text-align: center; /* Pour centrer le contenu */
 }
-.welcome{
+
+main{
+padding-top: 60px;
     text-align: center;
 }
+.langage-menu{
+padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Crée 3 colonnes égales */
+  gap: 1rem; /* Espace entre les éléments */
 
+}
+.custom-search {
+  display: inline block;
+  position: fixed;
+  top: 0; 
+  right: 0; 
+  padding-top: 30px;
+  padding-right: 10px;
+  align-items: center;
+  
+}
+.nav-style{
+  height: 100px;
+ 
+};
