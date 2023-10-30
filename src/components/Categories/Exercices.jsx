@@ -21,5 +21,4 @@ const Exercices = () => (
     ))}
   </div>
 );
-
 export default Exercices;
