@@ -3,8 +3,7 @@ import { ReactDOM } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import "../src/styles/App.css";
-import "./styles/darkMode.css";
+import "../src/styles/App.scss";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Works from "./pages/Works";
@@ -15,27 +14,34 @@ import Technologies from "./components/Categories/Technologies";
 import Projects from "./components/Categories/Projects";
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
+    const nextTheme = theme === "light" ? "dark" : "light";
+    setTheme(nextTheme);
   };
   useEffect(() => {
-    document.body.className = theme;
+    localStorage.setItem("theme", theme);
   }, [theme]);
   return (
     <BrowserRouter>
       <header>
         <Navbar />
       </header>
-      <main className={`App ${theme}`}>
+      <main className={`app ${theme}`}>
         <div>
-          <div className={`App ${theme}`}>
-            <button onClick={toggleTheme}>Toggle Theme</button>
-            <h1>Hello, world!</h1>
+          <div className="form-check form-switch toggle-button">
+            <input
+              className={`form-check-input toggle-button ${theme}`}
+              type="checkbox"
+              id="flexSwitchCheckDefault"
+              onClick={toggleTheme}
+            />
+            <label
+              className="form-check-label"
+              htmlFor="flexSwitchCheckDefault"
+            >
+              {theme === "dark" ? "Passer en mode jour" : "Passer en mode nuit"}
+            </label>
           </div>
           <Routes>
             <Route path="/" element={<Home />} />
