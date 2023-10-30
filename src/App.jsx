@@ -15,34 +15,17 @@ import Projects from "./components/Categories/Projects";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-  const toggleTheme = () => {
-    const nextTheme = theme === "light" ? "dark" : "light";
-    setTheme(nextTheme);
-  };
+
   useEffect(() => {
     localStorage.setItem("theme", theme);
   }, [theme]);
   return (
     <BrowserRouter>
       <header>
-        <Navbar />
+        <Navbar setTheme={setTheme} theme={theme} />
       </header>
       <main className={`app ${theme}`}>
         <div>
-          <div className="form-check form-switch toggle-button">
-            <input
-              className={`form-check-input toggle-button ${theme}`}
-              type="checkbox"
-              id="flexSwitchCheckDefault"
-              onClick={toggleTheme}
-            />
-            <label
-              className="form-check-label"
-              htmlFor="flexSwitchCheckDefault"
-            >
-              {theme === "dark" ? "Passer en mode jour" : "Passer en mode nuit"}
-            </label>
-          </div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
