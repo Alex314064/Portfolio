@@ -1,4 +1,3 @@
-import App from "../App";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ setTheme, theme }) => {
@@ -21,9 +20,9 @@ const Navbar = ({ setTheme, theme }) => {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <a className="navbar-brand fs-2" src={"netflix"}>
+      <div className="navbar-brand fs-2">
         Bienvenue sur le Portfolio d'Alexis 🖖
-      </a>
+      </div>
 
       <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -55,35 +54,16 @@ const Navbar = ({ setTheme, theme }) => {
               Me contacter
             </Link>
           </li>
-          <li className="form-check form-switch toggle-button fs-3">
-            <label
-              className={`form-check-label ${theme}`}
-              htmlFor="flexSwitchCheckDefault"
-            >
-              {theme === "dark" ? "☀️" : "🌙"}
-            </label>
-            <input
-              className={`form-check-input ${theme}`}
-              type="checkbox"
-              id="flexSwitchCheckDefault"
-              onClick={toggleTheme}
-            />
-          </li>
         </ul>
-        <form className="d-flex custom-search">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
+        <div className="navbar-right">
+          <img
+            className="git-logo"
+            src={`./../public/Logos/github-${theme}.svg`}
           />
-          <button
-            className="btn btn-outline-success my-2 my-sm-0 m-2"
-            type="submit"
-          >
-            Search
+          <button type="button" className="toggle-button" onClick={toggleTheme}>
+            {theme === "dark" ? "☀️" : "🌙"}
           </button>
-        </form>
+        </div>
       </div>
     </nav>
   );

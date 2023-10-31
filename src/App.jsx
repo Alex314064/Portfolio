@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Works from "./pages/Works";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
+import Footer from "./components/footer";
 import Exercices from "./components/Categories/Exercices";
 import Technologies from "./components/Categories/Technologies";
 import Projects from "./components/Categories/Projects";
@@ -18,6 +19,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
+    document.querySelector("body").className = `bg-${theme}`;
   }, [theme]);
   return (
     <BrowserRouter>
@@ -39,6 +41,9 @@ function App() {
           </Routes>
         </div>
       </main>
+      <footer>
+        <Footer setTheme={setTheme} theme={theme} />
+      </footer>
     </BrowserRouter>
   );
 }
