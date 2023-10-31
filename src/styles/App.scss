@@ -6,6 +6,10 @@ header {
   height:10%;
 }
 
+p {
+  line-height: 2.5rem;
+  font-size: large;
+}
 .Cards {
     display: flex;
     flex-direction: row;
@@ -14,7 +18,7 @@ header {
 }
 
 .Logos {
-    width: 350px;
+    width: 250px;
     border-radius:  10px;
     border: solid rgb(220, 27, 198) 4px;
     margin-bottom: 5px;
@@ -40,9 +44,9 @@ header {
 }
 
 main {
-  padding-top: 50px;
+  padding-top: 10px;
   min-height: 80%;
-  width: 60%;
+  width: 80%;
   margin-inline:auto;
   padding-inline: 1rem;
 }

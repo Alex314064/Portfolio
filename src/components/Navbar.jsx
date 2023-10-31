@@ -28,7 +28,7 @@ const Navbar = ({ setTheme, theme }) => {
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
           <li className="nav-item fs-3">
             <Link to="/" className="nav-link active" aria-current="page">
-              Home
+              Accueil
             </Link>
           </li>
           <li className="nav-item fs-3">
@@ -42,7 +42,7 @@ const Navbar = ({ setTheme, theme }) => {
               className="nav-link active fs-3"
               aria-current="page"
             >
-              A propos de moi
+              A propos
             </Link>
           </li>
           <li className="nav-item">
@@ -56,10 +56,28 @@ const Navbar = ({ setTheme, theme }) => {
           </li>
         </ul>
         <div className="navbar-right">
-          <img
-            className="git-logo"
-            src={`./../public/Logos/github-${theme}.svg`}
-          />
+          <a
+            href="https://github.com/Alex314064"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="git-logo"
+              src={`./../public/Logos/github-${theme}.svg`}
+              alt="GitHub Logo"
+            />
+          </a>
+          <a
+            href="https://linkedin.com/in/alexis-richard-web-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="git-logo"
+              src={`./../../public/Logos/linkedin-${theme}.svg`}
+              alt="Linkedin Logo"
+            />
+          </a>
           <button type="button" className="toggle-button" onClick={toggleTheme}>
             {theme === "dark" ? "☀️" : "🌙"}
           </button>
