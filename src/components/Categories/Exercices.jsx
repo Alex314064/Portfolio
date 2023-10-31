@@ -9,6 +9,7 @@ const Exercices = () => (
           <div className="card-header">{exercice.id}</div>
           <div className="card-body ">
             <h1 className="card-title">{exercice.name}</h1>
+            <img className="Logos" src={exercice.image}></img>
             <p className="card-text">
               Nom de l'exercice : {exercice.description}
             </p>
